@@ -16,8 +16,10 @@ services:
     volumes:
       - splunk-data:/opt/splunk/var/lib/splunk
       - splunk-apps:/opt/splunk/etc/apps/
+      - splunk-system:/opt/splunk/etc/system/local
     restart: unless-stopped
 
 volumes:
   splunk-data:
   splunk-apps:
+  splunk-system:
