@@ -7,12 +7,15 @@ services:
       dockerfile: Dockerfile
     container_name: splunk-compose
     environment:
-      - SPLUNK_PASSWORD=Admin@mudar123
-      - SPLUNK_USER=Admin
+      - SPLUNK_ADMIN=admin
+      - SPLUNK_ADMIN_PASSWORD=Admin@mudar123
+      - USER=user
+      - PASSWORD_USER=User@mudar123
     ports:
       - "8000:8000"
       - "8089:8089"
       - "9997:9997"
+      - "8088:8088"
     volumes:
       - splunk-data:/opt/splunk/var/lib/splunk
       - splunk-apps:/opt/splunk/etc/apps/
