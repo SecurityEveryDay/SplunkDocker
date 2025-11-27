@@ -19,11 +19,33 @@ connection_host = ip
 
 [http://default]
 disabled = 0
-host = 8d6a14cd1042
-token = e21685ff-1bdb-44b6-9bd0-afd6872a49a6
+host = local
+token = $TOKEN_HEC
+
+[udp://1514]
+connection_host = ip
+host = local
+sourcetype = $SOURCETYPE_1514_UDP
+
+[tcp://1514]
+connection_host = ip
+host = local
+sourcetype = $SOURCETYPE_1514_TCP
+
+[udp://1515]
+connection_host = ip
+host = local
+sourcetype = $SOURCETYPE_1515_UDP
+
+[tcp://1515]
+connection_host = ip
+host = local
+sourcetype = $SOURCETYPE_1515_TCP
+
 EOL
 
 mkdir -p /opt/splunk/etc/apps/splunk_httpinput/local/
+
 cat <<EOL >> /opt/splunk/etc/apps/splunk_httpinput/local/inputs.conf
 [http]
 disabled = 0
