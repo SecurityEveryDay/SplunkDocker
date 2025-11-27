@@ -11,11 +11,20 @@ services:
       - SPLUNK_ADMIN_PASSWORD=Admin@mudar123
       - USER=user
       - PASSWORD_USER=User@mudar123
+      - TOKEN_HEC=e21685ff-1bdb-44b6-9bd0-afd6872a49a6
+      - SOURCETYPE_1514_UDP=change_me
+      - SOURCETYPE_1514_TCP=change_me
+      - SOURCETYPE_1515_UDP=change_me
+      - SOURCETYPE_1515_TCP=change_me
     ports:
       - "8000:8000"
       - "8089:8089"
       - "9997:9997"
       - "8088:8088"
+      - "1514:1514/udp"
+      - "1514:1514"
+      - "1515:1515/udp"
+      - "1515:1515"
     volumes:
       - splunk-data:/opt/splunk/var/lib/splunk
       - splunk-apps:/opt/splunk/etc/apps/
